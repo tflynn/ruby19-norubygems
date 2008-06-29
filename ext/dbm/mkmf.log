@@ -1,0 +1,301 @@
+have_library: checking for __db_ndbm_open() in -ldb... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dbm  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L.      -lruby-static -ldb  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:3: error: '__db_ndbm_open' undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))__db_ndbm_open; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dbm  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L.      -lruby-static -ldb  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:3: warning: implicit declaration of function '__db_ndbm_open'
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { __db_ndbm_open(); return 0; }
+/* end */
+
+--------------------
+
+have_type: checking for DBM in db.h with -DDB_DBM_HSEARCH ... -------------------- no
+
+"gcc -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dbm  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common  -DDB_DBM_HSEARCH  -c conftest.c"
+conftest.c:4: error: syntax error before 'conftest_type'
+conftest.c:4: warning: type defaults to 'int' in declaration of 'conftest_type'
+conftest.c:4: warning: data definition has no type or storage class
+checked program was:
+/* begin */
+1: #include <db.h>
+2: 
+3: /*top*/
+4: typedef DBM conftest_type;
+5: int conftestval[sizeof(conftest_type)?1:-1];
+/* end */
+
+--------------------
+
+have_library: checking for __db_ndbm_open() in -ldb2... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dbm  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L.     -ldb  -lruby-static -ldb2 -ldb  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:3: error: '__db_ndbm_open' undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))__db_ndbm_open; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dbm  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L.     -ldb  -lruby-static -ldb2 -ldb  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:3: warning: implicit declaration of function '__db_ndbm_open'
+ld: library not found for -ldb2
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { __db_ndbm_open(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for __db_ndbm_open()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dbm  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L.     -ldb  -lruby-static -ldb  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:3: error: '__db_ndbm_open' undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))__db_ndbm_open; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dbm  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L.     -ldb  -lruby-static -ldb  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:3: warning: implicit declaration of function '__db_ndbm_open'
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { __db_ndbm_open(); return 0; }
+/* end */
+
+--------------------
+
+have_type: checking for DBM in db2/db.h with -DDB_DBM_HSEARCH ... -------------------- no
+
+"gcc -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dbm  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common  -DDB_DBM_HSEARCH  -c conftest.c"
+conftest.c:1:20: error: db2/db.h: No such file or directory
+conftest.c:4: error: syntax error before 'conftest_type'
+conftest.c:4: warning: type defaults to 'int' in declaration of 'conftest_type'
+conftest.c:4: warning: data definition has no type or storage class
+checked program was:
+/* begin */
+1: #include <db2/db.h>
+2: 
+3: /*top*/
+4: typedef DBM conftest_type;
+5: int conftestval[sizeof(conftest_type)?1:-1];
+/* end */
+
+--------------------
+
+have_type: checking for DBM in db2.h with -DDB_DBM_HSEARCH ... -------------------- no
+
+"gcc -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dbm  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common  -DDB_DBM_HSEARCH  -c conftest.c"
+conftest.c:1:17: error: db2.h: No such file or directory
+conftest.c:4: error: syntax error before 'conftest_type'
+conftest.c:4: warning: type defaults to 'int' in declaration of 'conftest_type'
+conftest.c:4: warning: data definition has no type or storage class
+checked program was:
+/* begin */
+1: #include <db2.h>
+2: 
+3: /*top*/
+4: typedef DBM conftest_type;
+5: int conftestval[sizeof(conftest_type)?1:-1];
+/* end */
+
+--------------------
+
+have_type: checking for DBM in db.h with -DDB_DBM_HSEARCH ... -------------------- no
+
+"gcc -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dbm  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common  -DDB_DBM_HSEARCH  -c conftest.c"
+conftest.c:4: error: syntax error before 'conftest_type'
+conftest.c:4: warning: type defaults to 'int' in declaration of 'conftest_type'
+conftest.c:4: warning: data definition has no type or storage class
+checked program was:
+/* begin */
+1: #include <db.h>
+2: 
+3: /*top*/
+4: typedef DBM conftest_type;
+5: int conftestval[sizeof(conftest_type)?1:-1];
+/* end */
+
+--------------------
+
+have_library: checking for dbm_open() in -ldb1... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dbm  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L.     -ldb  -lruby-static -ldb1 -ldb  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:3: error: 'dbm_open' undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))dbm_open; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dbm  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L.     -ldb  -lruby-static -ldb1 -ldb  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:3: warning: implicit declaration of function 'dbm_open'
+ld: library not found for -ldb1
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { dbm_open(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for dbm_open()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dbm  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L.     -ldb  -lruby-static -ldb  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:3: error: 'dbm_open' undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))dbm_open; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dbm  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L.     -ldb  -lruby-static -ldb  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:3: warning: implicit declaration of function 'dbm_open'
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { dbm_open(); return 0; }
+/* end */
+
+--------------------
+
+have_type: checking for DBM in db1/ndbm.h... -------------------- no
+
+"gcc -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dbm  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common   -c conftest.c"
+conftest.c:1:22: error: db1/ndbm.h: No such file or directory
+conftest.c:4: error: syntax error before 'conftest_type'
+conftest.c:4: warning: type defaults to 'int' in declaration of 'conftest_type'
+conftest.c:4: warning: data definition has no type or storage class
+checked program was:
+/* begin */
+1: #include <db1/ndbm.h>
+2: 
+3: /*top*/
+4: typedef DBM conftest_type;
+5: int conftestval[sizeof(conftest_type)?1:-1];
+/* end */
+
+--------------------
+
+have_type: checking for DBM in db1.h... -------------------- no
+
+"gcc -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dbm  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common   -c conftest.c"
+conftest.c:1:17: error: db1.h: No such file or directory
+conftest.c:4: error: syntax error before 'conftest_type'
+conftest.c:4: warning: type defaults to 'int' in declaration of 'conftest_type'
+conftest.c:4: warning: data definition has no type or storage class
+checked program was:
+/* begin */
+1: #include <db1.h>
+2: 
+3: /*top*/
+4: typedef DBM conftest_type;
+5: int conftestval[sizeof(conftest_type)?1:-1];
+/* end */
+
+--------------------
+
+have_type: checking for DBM in ndbm.h... -------------------- yes
+
+"gcc -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dbm  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common   -c conftest.c"
+checked program was:
+/* begin */
+1: #include <ndbm.h>
+2: 
+3: /*top*/
+4: typedef DBM conftest_type;
+5: int conftestval[sizeof(conftest_type)?1:-1];
+/* end */
+
+--------------------
+
+have_func: checking for dbm_clearerr()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dbm  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L.     -ldb  -lruby-static -ldb  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:3: error: 'dbm_clearerr' undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))dbm_clearerr; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dbm  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L.     -ldb  -lruby-static -ldb  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:3: warning: implicit declaration of function 'dbm_clearerr'
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { dbm_clearerr(); return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for cdefs.h... -------------------- no
+
+"gcc -E -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dbm  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common  conftest.c -o conftest.i"
+conftest.c:1:19: error: cdefs.h: No such file or directory
+checked program was:
+/* begin */
+1: #include <cdefs.h>
+/* end */
+
+--------------------
+
+have_header: checking for sys/cdefs.h... -------------------- yes
+
+"gcc -E -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dbm  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <sys/cdefs.h>
+/* end */
+
+--------------------
+

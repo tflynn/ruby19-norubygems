@@ -1,0 +1,11 @@
+have_header: checking for st.h... -------------------- no
+
+"gcc -E -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/syck  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common  conftest.c -o conftest.i"
+conftest.c:1:16: error: st.h: No such file or directory
+checked program was:
+/* begin */
+1: #include <st.h>
+/* end */
+
+--------------------
+

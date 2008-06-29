@@ -1,0 +1,102 @@
+have_func: checking for iconv() in iconv.h... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/iconv  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L.      -lruby-static  -lpthread -ldl -lobjc  "
+Undefined symbols:
+  "_iconv", referenced from:
+      _iconv$non_lazy_ptr in cccZq5ua.o
+ld: symbol(s) not found
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: #include <iconv.h>
+2: 
+3: /*top*/
+4: int main() { return 0; }
+5: int t() { void ((*volatile p)()); p = (void ((*)()))iconv; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/iconv  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L.      -lruby-static  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:5: error: too few arguments to function 'iconv'
+checked program was:
+/* begin */
+1: #include <iconv.h>
+2: 
+3: /*top*/
+4: int main() { return 0; }
+5: int t() { iconv(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for iconv() in -liconv... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/iconv  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L.      -lruby-static -liconv  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: #include <iconv.h>
+2: 
+3: /*top*/
+4: int main() { return 0; }
+5: int t() { void ((*volatile p)()); p = (void ((*)()))iconv; return 0; }
+/* end */
+
+--------------------
+
+<top (required)>: checking for const of iconv() 2nd argument... -------------------- no
+
+gcc -E -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/iconv  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common  conftest.c  |
+iconv (iconv_t ,
+ char ** , size_t * ,
+ char ** , size_t * );
+--------------------
+
+have_func: checking for iconvlist() in iconv.h... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/iconv  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L.     -liconv  -lruby-static -liconv  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: #include <iconv.h>
+2: 
+3: /*top*/
+4: int main() { return 0; }
+5: int t() { void ((*volatile p)()); p = (void ((*)()))iconvlist; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for __iconv_free_list() in iconv.h... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/iconv  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L.     -liconv  -lruby-static -liconv  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:5: error: '__iconv_free_list' undeclared (first use in this function)
+conftest.c:5: error: (Each undeclared identifier is reported only once
+conftest.c:5: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include <iconv.h>
+2: 
+3: /*top*/
+4: int main() { return 0; }
+5: int t() { void ((*volatile p)()); p = (void ((*)()))__iconv_free_list; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/iconv  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L.     -liconv  -lruby-static -liconv  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:5: warning: implicit declaration of function '__iconv_free_list'
+Undefined symbols:
+  "___iconv_free_list", referenced from:
+      _t in cccEivBM.o
+ld: symbol(s) not found
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: #include <iconv.h>
+2: 
+3: /*top*/
+4: int main() { return 0; }
+5: int t() { __iconv_free_list(); return 0; }
+/* end */
+
+--------------------
+

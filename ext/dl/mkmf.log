@@ -1,0 +1,126 @@
+have_header: checking for dlfcn.h... -------------------- yes
+
+"gcc -E -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dl  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common -fno-defer-pop -fno-omit-frame-pointer  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <dlfcn.h>
+/* end */
+
+--------------------
+
+have_library: checking for main() in -ldl... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dl  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common -fno-defer-pop -fno-omit-frame-pointer conftest.c  -L. -L../.. -L.      -lruby-static -ldl  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for dlopen()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dl  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common -fno-defer-pop -fno-omit-frame-pointer conftest.c  -L. -L../.. -L.     -ldl  -lruby-static -ldl  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:3: error: 'dlopen' undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))dlopen; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dl  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common -fno-defer-pop -fno-omit-frame-pointer conftest.c  -L. -L../.. -L.     -ldl  -lruby-static -ldl  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:3: warning: implicit declaration of function 'dlopen'
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { dlopen(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for dlclose()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dl  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common -fno-defer-pop -fno-omit-frame-pointer conftest.c  -L. -L../.. -L.     -ldl  -lruby-static -ldl  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:3: error: 'dlclose' undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))dlclose; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dl  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common -fno-defer-pop -fno-omit-frame-pointer conftest.c  -L. -L../.. -L.     -ldl  -lruby-static -ldl  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:3: warning: implicit declaration of function 'dlclose'
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { dlclose(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for dlsym()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dl  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common -fno-defer-pop -fno-omit-frame-pointer conftest.c  -L. -L../.. -L.     -ldl  -lruby-static -ldl  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:3: error: 'dlsym' undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))dlsym; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dl  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common -fno-defer-pop -fno-omit-frame-pointer conftest.c  -L. -L../.. -L.     -ldl  -lruby-static -ldl  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:3: warning: implicit declaration of function 'dlsym'
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { dlsym(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for dlerror()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dl  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common -fno-defer-pop -fno-omit-frame-pointer conftest.c  -L. -L../.. -L.     -ldl  -lruby-static -ldl  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:3: error: 'dlerror' undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))dlerror; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/dl  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common -fno-defer-pop -fno-omit-frame-pointer conftest.c  -L. -L../.. -L.     -ldl  -lruby-static -ldl  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:3: warning: implicit declaration of function 'dlerror'
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { dlerror(); return 0; }
+/* end */
+
+--------------------
+

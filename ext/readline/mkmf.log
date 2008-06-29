@@ -1,0 +1,376 @@
+have_library: checking for tgetnum() in -lncurses... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/readline -I/usr/local/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L/usr/local/lib -L.      -lruby-static -lncurses  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:3: error: 'tgetnum' undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))tgetnum; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/readline -I/usr/local/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L/usr/local/lib -L.      -lruby-static -lncurses  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:3: warning: implicit declaration of function 'tgetnum'
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { tgetnum(); return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for readline/readline.h... -------------------- yes
+
+"gcc -E -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/readline -I/usr/local/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <readline/readline.h>
+/* end */
+
+--------------------
+
+have_header: checking for readline/history.h... -------------------- yes
+
+"gcc -E -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/readline -I/usr/local/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <readline/history.h>
+/* end */
+
+--------------------
+
+have_library: checking for readline() in -lreadline... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/readline -I/usr/local/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L/usr/local/lib -L.     -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:3: error: 'readline' undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))readline; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/readline -I/usr/local/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L/usr/local/lib -L.     -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:3: warning: implicit declaration of function 'readline'
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { readline(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rl_filename_completion_function() in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/readline -I/usr/local/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L/usr/local/lib -L.     -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: #include <stdio.h>
+2: #include <readline/readline.h>
+3: #include <readline/history.h>
+4: 
+5: /*top*/
+6: int main() { return 0; }
+7: int t() { void ((*volatile p)()); p = (void ((*)()))rl_filename_completion_function; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rl_username_completion_function() in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/readline -I/usr/local/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L/usr/local/lib -L.     -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: #include <stdio.h>
+2: #include <readline/readline.h>
+3: #include <readline/history.h>
+4: 
+5: /*top*/
+6: int main() { return 0; }
+7: int t() { void ((*volatile p)()); p = (void ((*)()))rl_username_completion_function; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rl_completion_matches() in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/readline -I/usr/local/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L/usr/local/lib -L.     -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: #include <stdio.h>
+2: #include <readline/readline.h>
+3: #include <readline/history.h>
+4: 
+5: /*top*/
+6: int main() { return 0; }
+7: int t() { void ((*volatile p)()); p = (void ((*)()))rl_completion_matches; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for rl_deprep_term_function in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/readline -I/usr/local/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common   -c conftest.c"
+checked program was:
+/* begin */
+1: #include <stdio.h>
+2: #include <readline/readline.h>
+3: #include <readline/history.h>
+4: 
+5: /*top*/
+6: int main() { return 0; }
+7: int t() { const volatile void *volatile p; p = &(&rl_deprep_term_function)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for rl_completion_append_character in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/readline -I/usr/local/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common   -c conftest.c"
+checked program was:
+/* begin */
+1: #include <stdio.h>
+2: #include <readline/readline.h>
+3: #include <readline/history.h>
+4: 
+5: /*top*/
+6: int main() { return 0; }
+7: int t() { const volatile void *volatile p; p = &(&rl_completion_append_character)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for rl_basic_word_break_characters in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/readline -I/usr/local/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common   -c conftest.c"
+checked program was:
+/* begin */
+1: #include <stdio.h>
+2: #include <readline/readline.h>
+3: #include <readline/history.h>
+4: 
+5: /*top*/
+6: int main() { return 0; }
+7: int t() { const volatile void *volatile p; p = &(&rl_basic_word_break_characters)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for rl_completer_word_break_characters in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/readline -I/usr/local/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common   -c conftest.c"
+checked program was:
+/* begin */
+1: #include <stdio.h>
+2: #include <readline/readline.h>
+3: #include <readline/history.h>
+4: 
+5: /*top*/
+6: int main() { return 0; }
+7: int t() { const volatile void *volatile p; p = &(&rl_completer_word_break_characters)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for rl_basic_quote_characters in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/readline -I/usr/local/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common   -c conftest.c"
+checked program was:
+/* begin */
+1: #include <stdio.h>
+2: #include <readline/readline.h>
+3: #include <readline/history.h>
+4: 
+5: /*top*/
+6: int main() { return 0; }
+7: int t() { const volatile void *volatile p; p = &(&rl_basic_quote_characters)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for rl_completer_quote_characters in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/readline -I/usr/local/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common   -c conftest.c"
+checked program was:
+/* begin */
+1: #include <stdio.h>
+2: #include <readline/readline.h>
+3: #include <readline/history.h>
+4: 
+5: /*top*/
+6: int main() { return 0; }
+7: int t() { const volatile void *volatile p; p = &(&rl_completer_quote_characters)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for rl_filename_quote_characters in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/readline -I/usr/local/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common   -c conftest.c"
+checked program was:
+/* begin */
+1: #include <stdio.h>
+2: #include <readline/readline.h>
+3: #include <readline/history.h>
+4: 
+5: /*top*/
+6: int main() { return 0; }
+7: int t() { const volatile void *volatile p; p = &(&rl_filename_quote_characters)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for rl_attempted_completion_over in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/readline -I/usr/local/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common   -c conftest.c"
+checked program was:
+/* begin */
+1: #include <stdio.h>
+2: #include <readline/readline.h>
+3: #include <readline/history.h>
+4: 
+5: /*top*/
+6: int main() { return 0; }
+7: int t() { const volatile void *volatile p; p = &(&rl_attempted_completion_over)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for rl_library_version in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/readline -I/usr/local/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common   -c conftest.c"
+checked program was:
+/* begin */
+1: #include <stdio.h>
+2: #include <readline/readline.h>
+3: #include <readline/history.h>
+4: 
+5: /*top*/
+6: int main() { return 0; }
+7: int t() { const volatile void *volatile p; p = &(&rl_library_version)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for rl_event_hook in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/readline -I/usr/local/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common   -c conftest.c"
+checked program was:
+/* begin */
+1: #include <stdio.h>
+2: #include <readline/readline.h>
+3: #include <readline/history.h>
+4: 
+5: /*top*/
+6: int main() { return 0; }
+7: int t() { const volatile void *volatile p; p = &(&rl_event_hook)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rl_cleanup_after_signal() in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/readline -I/usr/local/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L/usr/local/lib -L.     -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: #include <stdio.h>
+2: #include <readline/readline.h>
+3: #include <readline/history.h>
+4: 
+5: /*top*/
+6: int main() { return 0; }
+7: int t() { void ((*volatile p)()); p = (void ((*)()))rl_cleanup_after_signal; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rl_clear_signals() in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/readline -I/usr/local/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L/usr/local/lib -L.     -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: #include <stdio.h>
+2: #include <readline/readline.h>
+3: #include <readline/history.h>
+4: 
+5: /*top*/
+6: int main() { return 0; }
+7: int t() { void ((*volatile p)()); p = (void ((*)()))rl_clear_signals; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rl_vi_editing_mode() in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/readline -I/usr/local/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L/usr/local/lib -L.     -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: #include <stdio.h>
+2: #include <readline/readline.h>
+3: #include <readline/history.h>
+4: 
+5: /*top*/
+6: int main() { return 0; }
+7: int t() { void ((*volatile p)()); p = (void ((*)()))rl_vi_editing_mode; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rl_emacs_editing_mode() in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/readline -I/usr/local/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L/usr/local/lib -L.     -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: #include <stdio.h>
+2: #include <readline/readline.h>
+3: #include <readline/history.h>
+4: 
+5: /*top*/
+6: int main() { return 0; }
+7: int t() { void ((*volatile p)()); p = (void ((*)()))rl_emacs_editing_mode; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for replace_history_entry() in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/readline -I/usr/local/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L/usr/local/lib -L.     -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: #include <stdio.h>
+2: #include <readline/readline.h>
+3: #include <readline/history.h>
+4: 
+5: /*top*/
+6: int main() { return 0; }
+7: int t() { void ((*volatile p)()); p = (void ((*)()))replace_history_entry; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for remove_history() in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-darwin9.3.0 -I../.././include -I../.././ext/readline -I/usr/local/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../.. -L/usr/local/lib -L.     -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: #include <stdio.h>
+2: #include <readline/readline.h>
+3: #include <readline/history.h>
+4: 
+5: /*top*/
+6: int main() { return 0; }
+7: int t() { void ((*volatile p)()); p = (void ((*)()))remove_history; return 0; }
+/* end */
+
+--------------------
+

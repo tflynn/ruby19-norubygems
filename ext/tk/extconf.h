@@ -1,0 +1,17 @@
+#ifndef EXTCONF_H
+#define EXTCONF_H
+#define HAVE_RUBY_RUBY_H 1
+#define HAVE_RUBY_ENCODING_H 1
+#define HAVE_RUBY_NATIVE_THREAD_P 1
+#define HAVE_RB_ERRINFO 1
+#define HAVE_RB_SAFE_LEVEL 1
+#define HAVE_STRUCT_RARRAY_PTR 1
+#define HAVE_ST_PTR 1
+#define HAVE_STRUCT_RARRAY_LEN 1
+#define HAVE_ST_LEN 1
+#define HAVE_TCL_H 1
+#define HAVE_TK_H 1
+#define HAVE_RB_HASH_LOOKUP 1
+#define RUBY_VERSION "1.9.0"
+#define RUBY_RELEASE_DATE "2008-06-29"
+#endif

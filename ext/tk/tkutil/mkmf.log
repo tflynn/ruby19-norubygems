@@ -1,0 +1,73 @@
+have_header: checking for ruby/ruby.h... -------------------- yes
+
+"gcc -E -I../../../.ext/include/i686-darwin9.3.0 -I../../.././include -I../../.././ext/tk/tkutil  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <ruby/ruby.h>
+/* end */
+
+--------------------
+
+have_func: checking for rb_obj_instance_exec() in ruby.h... -------------------- yes
+
+"gcc -o conftest -I../../../.ext/include/i686-darwin9.3.0 -I../../.././include -I../../.././ext/tk/tkutil  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../../.. -L.      -lruby-static  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: #include <ruby.h>
+2: 
+3: /*top*/
+4: int main() { return 0; }
+5: int t() { void ((*volatile p)()); p = (void ((*)()))rb_obj_instance_exec; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_sym_to_s() in ruby.h... -------------------- yes
+
+"gcc -o conftest -I../../../.ext/include/i686-darwin9.3.0 -I../../.././include -I../../.././ext/tk/tkutil  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../../.. -L.      -lruby-static  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: #include <ruby.h>
+2: 
+3: /*top*/
+4: int main() { return 0; }
+5: int t() { void ((*volatile p)()); p = (void ((*)()))rb_sym_to_s; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for strndup() in string.h... -------------------- no
+
+"gcc -o conftest -I../../../.ext/include/i686-darwin9.3.0 -I../../.././include -I../../.././ext/tk/tkutil  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../../.. -L.      -lruby-static  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:5: error: 'strndup' undeclared (first use in this function)
+conftest.c:5: error: (Each undeclared identifier is reported only once
+conftest.c:5: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include <string.h>
+2: 
+3: /*top*/
+4: int main() { return 0; }
+5: int t() { void ((*volatile p)()); p = (void ((*)()))strndup; return 0; }
+/* end */
+
+"gcc -o conftest -I../../../.ext/include/i686-darwin9.3.0 -I../../.././include -I../../.././ext/tk/tkutil  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../../.. -L.      -lruby-static  -lpthread -ldl -lobjc  "
+conftest.c: In function 't':
+conftest.c:5: warning: implicit declaration of function 'strndup'
+Undefined symbols:
+  "_strndup", referenced from:
+      _t in ccAhDZDJ.o
+ld: symbol(s) not found
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: #include <string.h>
+2: 
+3: /*top*/
+4: int main() { return 0; }
+5: int t() { strndup(); return 0; }
+/* end */
+
+--------------------
+

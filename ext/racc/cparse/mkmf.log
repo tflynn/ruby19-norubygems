@@ -1,0 +1,14 @@
+have_func: checking for rb_block_call() in ruby/ruby.h... -------------------- yes
+
+"gcc -o conftest -I../../../.ext/include/i686-darwin9.3.0 -I../../.././include -I../../.././ext/racc/cparse  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -O2 -g -Wall -Wno-parentheses -pipe -fno-common conftest.c  -L. -L../../.. -L.      -lruby-static  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: #include <ruby/ruby.h>
+2: 
+3: /*top*/
+4: int main() { return 0; }
+5: int t() { void ((*volatile p)()); p = (void ((*)()))rb_block_call; return 0; }
+/* end */
+
+--------------------
+
