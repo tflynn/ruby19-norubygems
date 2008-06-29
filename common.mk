@@ -86,7 +86,10 @@ OBJS          = dln.$(OBJEXT) \
 
 GOLFOBJS      = goruby.$(OBJEXT) golf_prelude.$(OBJEXT)
 
-PRELUDE_SCRIPTS = $(srcdir)/prelude.rb $(srcdir)/enc/prelude.rb $(srcdir)/gem_prelude.rb
+# Patch Tracy Flynn 2008-06-29 Removed built-in rubygems support
+#PRELUDE_SCRIPTS = $(srcdir)/prelude.rb $(srcdir)/enc/prelude.rb $(srcdir)/gem_prelude.rb
+PRELUDE_SCRIPTS = $(srcdir)/prelude.rb $(srcdir)/enc/prelude.rb
+
 PRELUDES      = prelude.c miniprelude.c golf_prelude.c
 
 SCRIPT_ARGS   =	--dest-dir="$(DESTDIR)" \
